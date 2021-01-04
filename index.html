@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skew button</title>
+
+    <style>
+        body {
+            background-color: black;
+            margin-top: 60px;
+            text-align: center;
+            font-family: arial;
+        }
+
+        h4 {
+            background: none;
+            border: none;
+            padding: 15px 40px;
+            color: white;
+            position: relative;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.2 ease-in-out;
+        }
+
+        h4::before,
+        h4::after {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 25px;
+            border-style: solid;
+            border-color: white;
+            transform: skew(-30deg);
+            transition: all 0.2 ease-in-out;
+        }
+
+        h4::before {
+            bottom: 0;
+            left: 0;
+            border-width: 0 0 3px 3px;
+
+        }
+
+        h4::after {
+            top: 0;
+            right: 0;
+            border-width: 3px 3px 0 0;
+        }
+
+        h4:hover {
+            color: black;
+        }
+
+        h4:hover::before,
+        h4:hover::after {
+            background: white;
+            color: red;
+            width: 99%;
+            height: 99%;
+            z-index: -1;
+            transform: scale(.8, .8) skew(-30deg);
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <h4>submit</h4>
+</body>
+
+</html>
